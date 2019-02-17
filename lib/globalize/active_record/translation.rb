@@ -2,6 +2,8 @@ module Globalize
   module ActiveRecord
     class Translation < ::ActiveRecord::Base
 
+      alias_attribute :locale, :Locale
+
       validates :locale, :presence => true
 
       class << self
