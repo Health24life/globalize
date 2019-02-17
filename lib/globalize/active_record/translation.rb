@@ -30,8 +30,11 @@ module Globalize
       end
 
       def locale=(locale)
-        binding.pry
-        write_attribute :locale, locale.to_s
+        if self.class.name.include? 'Dbo'
+          write_attribute :Locale, locale.to_s
+        else
+          write_attribute :locale, locale.to_s
+        end
       end
     end
   end
