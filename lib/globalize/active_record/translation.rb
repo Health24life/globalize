@@ -30,6 +30,7 @@ module Globalize
       end
 
       def locale=(locale)
+        binding.pry
         write_attribute :locale, locale.to_s
       end
     end
