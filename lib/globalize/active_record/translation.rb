@@ -4,8 +4,6 @@ module Globalize
 
       alias_attribute :locale, :Locale
 
-      validates :locale, :presence => true
-
       class << self
         # Sometimes ActiveRecord queries .table_exists? before the table name
         # has even been set which results in catastrophic failure.
